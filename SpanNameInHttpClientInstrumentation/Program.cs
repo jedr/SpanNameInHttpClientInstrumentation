@@ -12,6 +12,7 @@ namespace SpanNameInHttpClientInstrumentation
             using var tracerProvider = Sdk
                 .CreateTracerProviderBuilder()
                 .AddHttpClientInstrumentation()
+                .AddProcessor(new HttpClientSpanNameEnrichmentProcessor())
                 .AddConsoleExporter()
                 .Build();
 
